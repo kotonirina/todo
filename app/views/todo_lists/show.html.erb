@@ -1,5 +1,38 @@
-<center>
-	<h3><%= @todo.title %></h3>
-	<hr/>
-	<p><%= @todo.description %></p>
-</center>
+<h1><%= @todo.title %></h1>
+
+<p><%= @todo.description %></p>
+
+<ul>
+  <li><%= link_to "Editer", edit_todo_list_path(@todo) %></li>
+  <li><%= link_to "Supprimer", todo_list_path(@todo),
+                  method: :delete,
+                  data: { confirm: "Es-tu sur?" } %></li>
+</ul>
+
+<h2>Catégories</h2>
+<% @todo.categories.each do |category| %>
+  <p>
+    <strong>Nom de la catégorie:</strong>
+    <%= category.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= category.description %>
+  </p>
+<% end %>
+
+<h2>Ajouter une catégorie:</h2>
+<%= form_with model: [ @todo, @todo.categories.build ] do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

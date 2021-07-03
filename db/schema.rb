@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_03_064345) do
+ActiveRecord::Schema.define(version: 2021_07_03_083815) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "todo_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["todo_list_id"], name: "index_categories_on_todo_list_id"
+  end
 
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"
