@@ -1,3 +1,82 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: Arial;
+}
+
+.container {
+	position: absolute;
+	left: 30%;
+  border-radius: 5px;
+  background-color: #b5b9b5;
+  display: flex;
+  justify-content: center;
+  width: 35%;
+}
+
+.login-head {
+	position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container form {
+	margin-top: 15%;
+	padding-bottom: 7%;
+}
+
+form #email {
+	position: relative;
+	left: 20%;
+}
+
+form #password {
+	position: relative;
+	left: 9.3%;
+}
+
+form #email, #password, #user_name, #user_email, #user_password, #user_password_confirmation {
+	margin-bottom: 5%;
+}
+
+input[type=submit], .signup a, .signin a {
+  background-color: #646f64;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #4d699d;
+}
+
+.signup a, .signin a {
+	position: absolute;
+	top: 64%;
+	left: 62%;
+	text-decoration: none;
+}
+
+form #user_name {
+	position: relative;
+	left: 45%;
+}
+
+form #user_email {
+	position: relative;
+	left: 43.2%;
+}
+
+form #user_password {
+	position: relative;
+	left: 27.2%;
+}
+
+.container .signin {
+	position: absolute;
+	top: 74%;
+	width: 74%;
+	left: 20%;
+}

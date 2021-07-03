@@ -1,9 +1,17 @@
-<h1>Login</h1>
+<div class="container">
+	<div class="login-head">
+		<h1>Login</h1>		
+	</div>
 
-<%= form_tag '/login' do %>
+	<%= form_tag('/login', {class: 'form-vertical'}) do %>
+		<label for="email">Email: </label>
+	  <%= email_field_tag :email %><br/>
+	  <label for="password">Password: </label>
+	  <%= password_field_tag :password %><br/>
+	  <%= submit_tag "Se connecter" %>
+	<% end %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
+	<div class="signup">
+		<%= link_to "S'inscrire", '/signup' %>
+	</div>
+</div>

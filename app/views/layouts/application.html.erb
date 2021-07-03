@@ -11,9 +11,11 @@
 
   <body>
     <% if current_user %>
-      Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+      Vous êtes connecté en tant que <%= current_user.name %> | <%= link_to "Se deconnecter", '/logout' %>
     <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+      <center>
+        <!-- <%= link_to 'Se connecter', '/login' %> | <%= link_to "S'inscrire", '/signup' %> -->
+      </center>
     <% end %>
 
     <%= yield %>
