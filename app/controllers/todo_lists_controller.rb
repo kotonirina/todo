@@ -1,4 +1,6 @@
 class TodoListsController < ApplicationController
+	 before_action :authorize
+
 	layout 'application'
 
 	def index
