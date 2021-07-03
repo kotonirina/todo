@@ -1,0 +1,28 @@
+<center>
+	<h2>Simple liste de todo app</h2>
+</center>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Titre</th>
+    <th>Description</th>
+    <th>Action</th>
+  </tr>
+  <% @todos.each do |todo| %>
+	  <tr>
+	    <td><%= todo.id %></td>
+	    <td><%= todo.title %></td>
+	    <td><%= todo.description %></td>
+	    <td>
+	    	<%= link_to "Voir détails", todo_list_path(todo) %> | 
+      	<%= link_to "Editer", edit_todo_list_path(todo) %> |
+  			<%= link_to "Supprimer", todo_lists_path(todo),
+                  method: :delete,
+                  data: { confirm: "Es-tu sur?" } %>
+      </td>
+	  </tr>
+  <% end %>
+</table>
+
+<%= link_to "Nouveau Todo", new_todo_list_path %>
